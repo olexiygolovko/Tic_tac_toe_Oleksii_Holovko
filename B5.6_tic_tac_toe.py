@@ -1,11 +1,15 @@
+from colorama import Fore, Back, Style
+from colorama import init
+init(autoreset=True)
+
 def greet():
     print("-------------------")
-    print(" Приветсвуем в игре ")
-    print("  крестики-нолики  ")
-    print("-------------------")
-    print(" формат ввода: x y ")
-    print(" x - номер строки  ")
-    print(" y - номер столбца ")
+    print(Back.MAGENTA + " Приветсвуем в игре ")
+    print(Back.MAGENTA + "  крестики-нолики   ")
+    print(Back.MAGENTA + "-------------------")
+    print(Back.MAGENTA + " формат ввода: x y ")
+    print(Back.MAGENTA + " x - номер строки  ")
+    print(Back.MAGENTA + " y - номер столбца ")
     print("-------------------")
 
 greet()
@@ -18,12 +22,12 @@ field = [[" "] * 3 for i in range(3)]
 
 def show():
     print()
-    print("    | 0 | 1 | 2 | ")
-    print("  --------------- ")
+    print(Back.MAGENTA + "    | 0 | 1 | 2 | ")
+    print(Back.MAGENTA + "  --------------- ")
     for i, row in enumerate(field):
         row_str = f"  {i} | {' | '.join(row)} | "
-        print(row_str)
-        print("  --------------- ")
+        print(Back.MAGENTA + row_str)
+        print(Back.MAGENTA + "  --------------- ")
     print()
 
 show()
@@ -45,7 +49,7 @@ def ask():
         x, y = int(x), int(y)
 
         if 0 > x or x > 2 or 0 > y or y > 2:
-            print(" Координаты вне диапазона! ")
+            print(" Вышли за рамки диапазона! ")
             continue
 
         if field[x][y] != " ":
@@ -59,6 +63,7 @@ def check_win():
                 ((0, 2), (1, 1), (2, 0)), ((0, 0), (1, 1), (2, 2)), ((0, 0), (1, 0), (2, 0)),
                 ((0, 1), (1, 1), (2, 1)), ((0, 2), (1, 2), (2, 2)))
     for cord in win_cord:
+        show()
         symbols = []
         for c in cord:
             symbols.append(field[c[0]][c[1]])
@@ -66,7 +71,7 @@ def check_win():
             print(f"Выиграл {player_name_x}! Поздравляем!!!")
             return True
         if symbols == ["0", "0", "0"]:
-            print(f"Выиграл {player_name_o} Поздравляем!!!")
+            print(f"Выиграл {player_name_o}! Поздравляем!!!")
             return True
     return False
 
@@ -78,9 +83,9 @@ while True:
     count += 1
     show()
     if count % 2 == 1:
-        print(f" Ходит {player_name_x}(крестик)! ")
+        print(f" Ходит {player_name_x} (крестик) ")
     else:
-        print(f" Ходит {player_name_o} (нолик)! ")
+        print(f" Ходит {player_name_o} (нолик) ")
 
     x, y = ask()
 
