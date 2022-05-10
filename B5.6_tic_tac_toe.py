@@ -3,14 +3,15 @@ from colorama import init
 init(autoreset=True)
 
 def greet():
-    print("-------------------")
+    print("--------------------")
     print(Back.MAGENTA + " Приветсвуем в игре ")
     print(Back.MAGENTA + "  крестики-нолики   ")
-    print(Back.MAGENTA + "-------------------")
-    print(Back.MAGENTA + " формат ввода: x y ")
-    print(Back.MAGENTA + " x - номер строки  ")
-    print(Back.MAGENTA + " y - номер столбца ")
-    print("-------------------")
+    print(Back.MAGENTA + "--------------------")
+    print(Back.MAGENTA + " формат ввода: x y  ")
+    print(Back.MAGENTA + " через пробел       ")
+    print(Back.MAGENTA + " x - номер строки   ")
+    print(Back.MAGENTA + " y - номер столбца  ")
+    print("--------------------")
 
 greet()
 
