@@ -4,13 +4,13 @@ init(autoreset=True)
 
 def greet():
     print("--------------------")
-    print(Back.MAGENTA + " Приветсвуем в игре ")
-    print(Back.MAGENTA + "  крестики-нолики   ")
+    print(Back.MAGENTA + Fore.BLACK + " Приветсвуем в игре ")
+    print(Back.MAGENTA + Fore.BLACK + "  крестики-нолики   ")
     print(Back.MAGENTA + "--------------------")
-    print(Back.MAGENTA + " формат ввода: x y  ")
-    print(Back.MAGENTA + " через пробел       ")
-    print(Back.MAGENTA + " x - номер строки   ")
-    print(Back.MAGENTA + " y - номер столбца  ")
+    print(Back.MAGENTA + Fore.BLACK + " формат ввода: x y  ")
+    print(Back.MAGENTA + Fore.BLACK + " через пробел       ")
+    print(Back.MAGENTA + Fore.BLACK + " x - номер строки   ")
+    print(Back.MAGENTA + Fore.BLACK + " y - номер столбца  ")
     print("--------------------")
 
 greet()
@@ -23,12 +23,12 @@ field = [[" "] * 3 for i in range(3)]
 
 def show():
     print()
-    print(Back.MAGENTA + "    | 0 | 1 | 2 | ")
-    print(Back.MAGENTA + "  --------------- ")
+    print(Back.MAGENTA + Fore.BLACK + "    | 0 | 1 | 2 | ")
+    print(Back.MAGENTA + Fore.BLACK + "  --------------- ")
     for i, row in enumerate(field):
         row_str = f"  {i} | {' | '.join(row)} | "
-        print(Back.MAGENTA + row_str)
-        print(Back.MAGENTA + "  --------------- ")
+        print(Back.MAGENTA + Fore.BLACK + row_str)
+        print(Back.MAGENTA + Fore.BLACK + "  --------------- ")
     print()
 
 show()
