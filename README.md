@@ -1,1 +1,2 @@
-# SkillFactory_B5.6_tic_tac_toe_Golovko_Alexey
+Let's write the simplest tic-tac-toe game
+The game is a consular, with additional modules - colorama

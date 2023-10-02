@@ -4,19 +4,19 @@ init(autoreset=True)
 
 def greet():
     print("--------------------")
-    print(Back.MAGENTA + Fore.BLACK + " Приветсвуем в игре ")
-    print(Back.MAGENTA + Fore.BLACK + "  крестики-нолики   ")
+    print(Back.MAGENTA + Fore.BLACK + " Welcome to the game ")
+    print(Back.MAGENTA + Fore.BLACK + "  tic-tac-toe  ")
     print(Back.MAGENTA + "--------------------")
-    print(Back.MAGENTA + Fore.BLACK + " формат ввода: x y  ")
-    print(Back.MAGENTA + Fore.BLACK + " через пробел       ")
-    print(Back.MAGENTA + Fore.BLACK + " x - номер строки   ")
-    print(Back.MAGENTA + Fore.BLACK + " y - номер столбца  ")
+    print(Back.MAGENTA + Fore.BLACK + " input format: x y ")
+    print(Back.MAGENTA + Fore.BLACK + " separated by space  ")
+    print(Back.MAGENTA + Fore.BLACK + " x - line number  ")
+    print(Back.MAGENTA + Fore.BLACK + " y - column number ")
     print("--------------------")
 
 greet()
 
-player_name_x = input("Введите имя игрока играющего крестиком: ")
-player_name_o = input("Введите имя игрока играющего ноликом: ")
+player_name_x = input("Enter the name of the player playing with X ")
+player_name_o = input("Enter the name of the player playing with Y ")
 
 
 field = [[" "] * 3 for i in range(3)]
@@ -35,26 +35,26 @@ show()
 
 def ask():
     while True:
-        cords = input("         Ваш ход: ").split()
+        cords = input(" Your move: ").split()
 
         if len(cords) != 2:
-            print(" Введите 2 координаты! ")
+            print("Enter 2 coordinates!")
             continue
 
         x, y = cords
 
         if not (x.isdigit()) or not (y.isdigit()):
-            print(" Введите числа! ")
+            print(" Enter numbers! ")
             continue
 
         x, y = int(x), int(y)
 
         if 0 > x or x > 2 or 0 > y or y > 2:
-            print(" Вышли за рамки диапазона! ")
+            print(" Out of range! ")
             continue
 
         if field[x][y] != " ":
-            print(" Клетка занята! ")
+            print(" The cage is occupied! ")
             continue
 
         return x, y
@@ -69,10 +69,10 @@ def check_win():
         for c in cord:
             symbols.append(field[c[0]][c[1]])
         if symbols == ["X", "X", "X"]:
-            print(f"Выиграл {player_name_x}! Поздравляем!!!")
+            print(f"Won {player_name_x}! Congratulations!!!")
             return True
         if symbols == ["0", "0", "0"]:
-            print(f"Выиграл {player_name_o}! Поздравляем!!!")
+            print(f"Won {player_name_o}! Congratulations!!!")
             return True
     return False
 
@@ -84,9 +84,9 @@ while True:
     count += 1
     show()
     if count % 2 == 1:
-        print(f" Ходит {player_name_x} (крестик) ")
+        print(f" Move: {player_name_x} (X) ")
     else:
-        print(f" Ходит {player_name_o} (нолик) ")
+        print(f" Move: {player_name_o} (0) ")
 
     x, y = ask()
 
@@ -99,7 +99,7 @@ while True:
         break
 
     if count == 9:
-        print(" Ничья! Победила дружба!")
+        print(" Draw! Friendship won!")
         break
 
 
