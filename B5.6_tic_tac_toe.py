@@ -4,13 +4,13 @@ init(autoreset=True)
 
 def greet():
     print("--------------------")
-    print(Back.MAGENTA + Fore.BLACK + " Welcome to the game ")
-    print(Back.MAGENTA + Fore.BLACK + "  tic-tac-toe  ")
-    print(Back.MAGENTA + "--------------------")
-    print(Back.MAGENTA + Fore.BLACK + " input format: x y ")
-    print(Back.MAGENTA + Fore.BLACK + " separated by space  ")
-    print(Back.MAGENTA + Fore.BLACK + " x - line number  ")
-    print(Back.MAGENTA + Fore.BLACK + " y - column number ")
+    print(Back.GREEN + Fore.BLACK + " Welcome to the game ")
+    print(Back.GREEN + Fore.BLACK + "  tic-tac-toe  ")
+    print(Back.GREEN + "--------------------")
+    print(Back.GREEN + Fore.BLACK + " input format: x y ")
+    print(Back.GREEN + Fore.BLACK + " separated by space  ")
+    print(Back.GREEN + Fore.BLACK + " x - line number  ")
+    print(Back.GREEN + Fore.BLACK + " y - column number ")
     print("--------------------")
 
 greet()
@@ -23,12 +23,12 @@ field = [[" "] * 3 for i in range(3)]
 
 def show():
     print()
-    print(Back.MAGENTA + Fore.BLACK + "    | 0 | 1 | 2 | ")
-    print(Back.MAGENTA + Fore.BLACK + "  --------------- ")
+    print(Back.GREEN + Fore.BLACK + "    | 0 | 1 | 2 | ")
+    print(Back.GREEN + Fore.BLACK + "  --------------- ")
     for i, row in enumerate(field):
         row_str = f"  {i} | {' | '.join(row)} | "
-        print(Back.MAGENTA + Fore.BLACK + row_str)
-        print(Back.MAGENTA + Fore.BLACK + "  --------------- ")
+        print(Back.GREEN + Fore.BLACK + row_str)
+        print(Back.GREEN + Fore.BLACK + "  --------------- ")
     print()
 
 show()
